@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Outfit', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fffbeb;
+  transition: background 0.3s;
+}
+header {
+  padding: 15px 20px;
+  max-width: 1210px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+}
+#app {
+  .logo {
+    h2 {
+      font-size: 38px;
+      cursor: pointer;
+    }
+  }
+}
+
+// ---------------- PAGINATION  ----------------------
+.wrapper {
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 1210px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-gap: 20px;
+  margin-bottom: 30px;
+}
+
+.list__item {
+  display: flex;
+  grid-gap: 15px;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.75);
+  transition: background 0.3s;
+  border-radius: 6px;
+  max-width: 250px;
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  img {
+    max-width: 100px;
+  }
+  .list__data {
+    font-size: 14px;
+  }
+}
+
+.pagination {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-gap: 7px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.pagination__btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 50%;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.3s all;
+  &:hover {
+    background-color: #408ad2;
+    color: #fff;
+  }
+}
+
+.pagination__btn-active {
+  background-color: #408ad2;
+  color: #fff;
+}
+
+.pagination__btn-active {
+  background-color: #408ad2;
+  color: #fff;
+}
+
+// ----------------------------------------
+
+// ------------------ SEARCH ------------------
+
+.search-section {
+  margin: 0 auto;
+  max-width: 350px;
+  .search-users {
+    margin: 0 auto;
+    width: 100%;
+    padding: 7px 12px;
+    border: 1px solid;
+    font-size: 18px;
+    background: #fff;
+    transition: background 0.3s;
+  }
+}
+// --------------------------------------------
+
+// ------------------ Dark and Light Mode ---------------
+
+#mode-toggle {
+  cursor: pointer;
+  border: 1px solid;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+// ------------------------------------------------------
+
+// --------------------- Dark Mode  -----------------------
+
+.dark {
+  .pagination__btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    &:hover {
+      background-color: #fff;
+      color: #030303;
+    }
+  }
+  .pagination__btn-active {
+    background-color: #fff;
+    color: #030303;
+  }
+  #search-users {
+    background-color: #121212;
+    border: 1px solid rgb(51, 51, 51);
+    color: #fff;
+  }
+  .logo {
+    h2 {
+      color: #fff;
+    }
+  }
+  #mode-toggle {
+    border: 1px solid #fff;
+    .fas {
+      color: #fff;
+    }
+  }
+  .wrapper {
+    .list {
+      .list__item {
+        background-color: rgb(51, 51, 51);
+        .list__data {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------
+
+// ----------------- Modal ----------------------
+
+.modal-bg {
+  position: fixed;
+  transition: 0.3s all;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  transition: 0.3s all;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  .modal {
+    max-width: 350px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all;
+    grid-gap: 20px;
+    min-height: 220px;
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  &.show {
+    opacity: 1;
+    .modal {
+      transform: translateY(-50px);
+      opacity: 1;
+    }
+  }
+}
+.arrows {
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+  transition: 0.3s all;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  display: none;
+  &:hover {
+    opacity: 1;
+  }
+  &.dark-mode {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #000;
+  }
+}
+
+// ----------------------------------------------
+@media screen and(max-width: 830px) {
+  .arrows.active {
+    display: grid;
+    place-items: center;
+  }
+}
+@media screen and(max-width: 454px) {
+  .modal-bg {
+    .modal {
+      max-width: 300px;
+      padding: 5px 10px;
+    }
+  }
+  .search-section {
+    width: 100%;
+    padding: 0 20px;
+    .search-users {
+      width: 100%;
+    }
+  }
+}
