@@ -249,6 +249,14 @@ header {
   opacity: 0;
 }
 
+.modal-bg .modal .sim-info h3 {
+  text-align: center;
+}
+
+.modal-bg .modal .sim-info h2 {
+  text-align: center;
+}
+
 .modal-bg.show {
   opacity: 1;
 }

@@ -213,6 +213,14 @@ header {
     min-height: 220px;
     transform: translateY(-300px) scale(0.2);
     opacity: 0;
+    .sim-info {
+      h3 {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+    }
   }
   &.show {
     opacity: 1;
