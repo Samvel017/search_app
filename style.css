@@ -244,8 +244,8 @@ header {
   transition: 0.3s all;
   grid-gap: 20px;
   min-height: 220px;
-  -webkit-transform: translateY(-300px);
-          transform: translateY(-300px);
+  -webkit-transform: translateY(-300px) scale(0.2);
+          transform: translateY(-300px) scale(0.2);
   opacity: 0;
 }
 
@@ -254,8 +254,8 @@ header {
 }
 
 .modal-bg.show .modal {
-  -webkit-transform: translateY(-50px);
-          transform: translateY(-50px);
+  -webkit-transform: translateY(-50px) scale(1);
+          transform: translateY(-50px) scale(1);
   opacity: 1;
 }
 
